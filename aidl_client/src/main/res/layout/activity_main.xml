@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="计算5+4" />
+
+    <Button
+        android:id="@+id/btn_subtraction"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="计算8-6" />
+
+    <Button
+        android:id="@+id/btn_addUserIn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="addUserIn" />
+
+    <Button
+        android:id="@+id/btn_addUserOut"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="addUserOut" />
+
+    <Button
+        android:id="@+id/btn_addUserInout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="addUserInout" />
+
+    <Button
+        android:id="@+id/btn_getUsers"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="getUsers" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="注册监听" />
+
+    <Button
+        android:id="@+id/btn_unregister"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="解绑监听" />
+
+    <Button
+        android:id="@+id/btn_operation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="计算" />
+
+</LinearLayout>
