@@ -9,6 +9,14 @@ checkstyle {
 
 task checkstyle(type: Checkstyle) {
 
+  def forceCopy = false
+  //如有需要，可以强制去更新客户端的pre-commit文件
+  try {
+    copyPreCommitFile(forceCopy)
+  } catch (Exception e) {
+    println(e)
+  }
+
   source './app/src/main/java'
   source './app_client/src/main/java'
 
@@ -66,4 +74,14 @@ def getChangeFiles() {
   } catch (Exception e) {
     return ""
   }
+}
+
+//把根目录下的pre-commit文件复制到.git-->hooks目录
+def copyPreCommitFile(boolean forceUpdate) {
+
+  def src = "${project.rootDir}/config/pre-commit"
+  def target = "${project.rootDir}/.git/hooks"
+  copyFile(forceUpdate, src, target)
+
+  println("copyPreCommitFile")
 }

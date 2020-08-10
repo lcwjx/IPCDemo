@@ -11,7 +11,8 @@ import java.util.List;
 import androidx.annotation.Nullable;
 
 public class AIDLService extends Service {
-    private List<User> users = new ArrayList<>();
+
+                      private List<User> users = new ArrayList<>();
 
     private static final String TAG = "AIDLService";
     /**
