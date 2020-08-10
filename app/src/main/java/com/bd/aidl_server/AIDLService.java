@@ -118,7 +118,14 @@ public class AIDLService extends Service {
         }
 
         @Override
-        public void registerListener(IOnOperationListener listener) throws RemoteException {
+        public void registerListener(final IOnOperationListener listener) throws RemoteException {
+            listener.asBinder().linkToDeath(new DeathRecipient() {
+                @Override
+                public void binderDied() {
+                    callbackList.unregister(listener);
+                }
+            },0);
+
             callbackList.register(listener);
             Log.e(TAG, "registerListener 注册回调成功");
         }
@@ -137,6 +144,15 @@ public class AIDLService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        stub.linkToDeath(new IBinder.DeathRecipient() {
+            @Override
+            public void binderDied() {
+
+            }
+        },0);
         return stub;
     }
+
+
+
 }
