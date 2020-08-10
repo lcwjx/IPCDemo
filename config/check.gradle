@@ -1,14 +1,13 @@
 apply plugin: 'checkstyle'
 
 checkstyle {
-  toolVersion '5.9'
+  toolVersion '8.17'
+  configFile file("../IPCDemo/config/checkstyle.xml")
+  ignoreFailures false
+  showViolations true
 }
 
 task checkstyle(type: Checkstyle) {
-
-  configFile file("../config/checkstyle.xml")
-  ignoreFailures false
-  showViolations true
 
   source './app/src/main/java'
   source './app_client/src/main/java'

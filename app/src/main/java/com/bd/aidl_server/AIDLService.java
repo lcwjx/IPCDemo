@@ -6,10 +6,8 @@ import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import androidx.annotation.Nullable;
 
 public class AIDLService extends Service {
@@ -124,7 +122,7 @@ public class AIDLService extends Service {
                 public void binderDied() {
                     callbackList.unregister(listener);
                 }
-            },0);
+            }, 0);
 
             callbackList.register(listener);
             Log.e(TAG, "registerListener 注册回调成功");
@@ -149,10 +147,9 @@ public class AIDLService extends Service {
             public void binderDied() {
 
             }
-        },0);
+        }, 0);
         return stub;
     }
-
 
 
 }
